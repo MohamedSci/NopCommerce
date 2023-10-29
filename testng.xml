@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression Suite"  parallel="classes" thread-count="7">
+	<parameter name="browser" value="chrome" />
+	<test name="Regression Test">
+		<classes>
+			<class name="tests.UserRegistrationTest" />
+			<class name="tests.UserRegistrationTestWithDDTAndCSV" />
+			<class name="tests.UserRegistrationTestWithDDTAndExcel" />
+			<class name="tests.UserRegistrationTestWithDDTAndJSON" />
+			<class name="tests.UserRegistrationTestWithJavaFaker" />
+			<class name="tests.UserRegistrationWithDDTAndDataProvider" />
+			<class name="tests.UserRegistrationWithDDTAndPropertiesFile" />
+
+		</classes>
+	</test>
+</suite> 
