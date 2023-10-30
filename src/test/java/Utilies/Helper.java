@@ -41,7 +41,7 @@ public class Helper {
 				Screenshot screenshot=new AShot()
 						.shootingStrategy(ShootingStrategies.viewportPasting(1000))
 						.takeScreenshot(driver);
-				ImageIO.write(screenshot.getImage(),"PNG",new File("./ScreenShot"+fileName+"Page" + ".png"));
+				ImageIO.write(screenshot.getImage(),"PNG",new File("./ScreenShot/"+fileName+"WEbPage" + ".png"));
 			}catch(Exception e) {
 				System.out.println("captureFullPageScreenshot Exception "+ e.getMessage());
 			}
