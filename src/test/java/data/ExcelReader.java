@@ -34,7 +34,7 @@ public class ExcelReader {
 		XSSFWorkbook wb = new XSSFWorkbook(fis);
 		XSSFSheet sheet = wb.getSheetAt(0);
 
-		int TotalNumberOfRows = (3);
+		int TotalNumberOfRows = (sheet.getLastRowNum()+1);
 		int TotalNumberOfCols = 4 ;
 
 		String[][] arrayExcelData = new String[TotalNumberOfRows][TotalNumberOfCols] ;

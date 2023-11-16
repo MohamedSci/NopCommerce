@@ -35,22 +35,12 @@ public class UserRegistrationTestWithDDTAndExcel extends TestBase
 		registerObject = new UserRegistrationPage(driver);
 		registerObject.userRegistration(firstname,lastname,email,password);
 		Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
-	}
-
-	@Test(dependsOnMethods= {"RegisteredUserCanLogin"})
-	public void RegisteredUserCanLogout()
-	{
 		registerObject.userLogout();
-	}
-
-	@Test(dependsOnMethods= {"UserCanRegisterSuccssfully"},dataProvider="ExcelData")
-	public void RegisteredUserCanLogin(String email , String password)
-	{
 		homeObject.openLoginPage();
 		loginObject = new LoginPage(driver);
-		loginObject.UserLogin(email, password);
+		loginObject.UserLogin(email,password);
 		Assert.assertTrue(registerObject.logoutLink.getText().contains("Log out"));
+		registerObject.userLogout();
 	}
-
 
 }
