@@ -22,7 +22,7 @@ public class UserRegistrationTestWithJavaFaker extends TestBase
 	String password = fakeData.number().digits(8).toString(); 
 
 	@Test(priority=1,alwaysRun=true)
-	public void UserCanRegisterSuccssfully() 
+	public void UserCanRegisterSuccssfullyFaker()
 	{
 		homeObject = new HomePage(driver); 
 		homeObject.openRegistrationPage();
@@ -32,14 +32,14 @@ public class UserRegistrationTestWithJavaFaker extends TestBase
 		Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
 	}
 
-	@Test(dependsOnMethods= {"RegisteredUserCanLogin"})
-	public void RegisteredUserCanLogout() 
+	@Test(dependsOnMethods= {"RegisteredUserCanLoginFaker"})
+	public void RegisteredUserCanLogoutFaker()
 	{
 		registerObject.userLogout();
 	}
 
-	@Test(dependsOnMethods= {"UserCanRegisterSuccssfully"})
-	public void RegisteredUserCanLogin() 
+	@Test(dependsOnMethods= {"UserCanRegisterSuccssfullyFaker"})
+	public void RegisteredUserCanLoginFaker()
 	{
 		homeObject.openLoginPage();
 		loginObject = new LoginPage(driver); 

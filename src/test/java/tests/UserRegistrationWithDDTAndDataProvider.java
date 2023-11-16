@@ -21,13 +21,13 @@ public class UserRegistrationWithDDTAndDataProvider extends TestBase
 	public static Object[][] userData()
 	{
 		return new Object[][] {
-			{"Saz516" , "for1t66","test516Saz0166@gmail.com","121345656"},
-			{"Ahmed1665","Sabe1h666","test516Sabeh30166@gmail.com","12341567856"}
+			{"Saz516" , "for1t66","test5166Saz666@gmail.com","121345656"},
+			{"Ahmed1665","Sabe1h666","test5166Sabeh666@gmail.com","12341567856"}
 		};
 	}
 
-	@Test(priority=1,dataProvider="testData")
-	public void UserCanRegisterSuccssfully(String fname, String lname , String email , String password ) 
+	@Test(dataProvider="testData")
+	public void UserCanRegisterSuccssfullyDataProvider(String fname, String lname , String email , String password )
 	{
 		homeObject = new HomePage(driver); 
 		homeObject.openRegistrationPage();
@@ -35,17 +35,17 @@ public class UserRegistrationWithDDTAndDataProvider extends TestBase
 		registerObject.userRegistration(fname,lname,email,password);
 		Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
 	}
-	@Test(dependsOnMethods= {"RegisteredUserCanLogin"})
-	public void RegisteredUserCanLogout() 
+	@Test(dependsOnMethods= {"RegisteredUserCanLoginDataProvider"})
+	public void RegisteredUserCanLogoutDataProvider()
 	{
 		registerObject.userLogout();
 	}
 
-	@Test(dependsOnMethods= {"UserCanRegisterSuccssfully"},dataProvider="testData")
-	public void RegisteredUserCanLogin(String email , String password) 
+	@Test(dependsOnMethods= {"UserCanRegisterSuccssfullyDataProvider"},dataProvider="testData")
+	public void RegisteredUserCanLoginDataProvider(String email , String password)
 	{
 		homeObject.openLoginPage();
-		loginObject = new LoginPage(driver); 
+		loginObject = new LoginPage(driver);
 		loginObject.UserLogin(email,password);
 		Assert.assertTrue(registerObject.logoutLink.getText().contains("Log out"));
 	}
