@@ -13,6 +13,10 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.UserRegistrationPage;
 
+/* There is only one test which is used for REGISTRATION, lOG IN , LOGOUT
+* as it's so hard to make concurrency between Registration and Sign in process with the same data provider */
+
+
 public class UserRegistrationTestWithDDTAndExcel extends TestBase
 {
 	HomePage homeObject ;
@@ -35,6 +39,7 @@ public class UserRegistrationTestWithDDTAndExcel extends TestBase
 		registerObject = new UserRegistrationPage(driver);
 		registerObject.userRegistration(firstname,lastname,email,password);
 		Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
+		// The Log Out Link is not displayed in this DDT issue at this Step
 //		registerObject.userLogout();
 		homeObject.openLoginPage();
 		loginObject = new LoginPage(driver);

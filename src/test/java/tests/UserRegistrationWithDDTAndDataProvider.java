@@ -11,6 +11,10 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.UserRegistrationPage;
 
+/* There is only one test which is used for REGISTRATION, lOG IN , LOGOUT
+ * as it's so hard to make concurrency between Registration and Sign in process with the same data provider */
+
+
 public class UserRegistrationWithDDTAndDataProvider extends TestBase
 {
 	HomePage homeObject ; 
@@ -22,8 +26,8 @@ public class UserRegistrationWithDDTAndDataProvider extends TestBase
 	public static Object[][] userData()
 	{
 		return new Object[][] {
-			{"Saz516" , "for1t660","test51660Saz9990@gmail.com","121345656"},
-			{"Ahmed1665","Sabe1h6660","test51606Sab0e999@gmail.com","12341567856"}
+			{"Saz516" , "for1t660","test51660Saz99990@gmail.com","121345656"},
+			{"Ahmed1665","Sabe1h6660","test51606Sab0e9999@gmail.com","12341567856"}
 		};
 	}
 

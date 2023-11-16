@@ -14,6 +14,9 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.UserRegistrationPage;
 
+/* There is only one test which is used for REGISTRATION, lOG IN , LOGOUT
+ * as it's so hard to make concurrency between Registration and Sign in process with the same data provider */
+
 public class UserRegistrationTestWithDDTAndCSV extends TestBase {
 	HomePage homeObject;
 	UserRegistrationPage registerObject;
@@ -24,7 +27,7 @@ public class UserRegistrationTestWithDDTAndCSV extends TestBase {
 
 	String[] csvCell;
 	@Test(priority = 1, alwaysRun = true)
-	public void UserCanRegisterSuccssfullyJSON() throws IOException {
+	public void UserCanRegisterSuccssfullyCSV() throws IOException {
 		// get path of CSV file
 		reader = new CSVReader(new FileReader(CSV_file));
 
