@@ -82,7 +82,7 @@ public class TestBase
 			// Take A Screen Shot for Failed Element
 			helper.takeElementsScreenshot(driver, result.getName());
 			// Take Screen Shot to the Full page
-			helper.captureFullPageScreenshot(driver, result.getName());
+			// helper.captureFullPageScreenshot(driver, result.getName());
 		}
 	}
 	

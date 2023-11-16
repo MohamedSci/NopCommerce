@@ -21,12 +21,12 @@ public class UserRegistrationTest extends TestBase
 		homeObject = new HomePage(driver); 
 		homeObject.openRegistrationPage();
 		registerObject = new UserRegistrationPage(driver); 
-		registerObject.userRegistration("mnaa1", "said1", "mnaaa974f175@gmail.com", "112345678");
+		registerObject.userRegistration("3mnaa12", "3said21", "3mnaaa9274f17015@gmail.com", "3112134567801");
 		Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
 	}
 	
 	@Test(dependsOnMethods= {"RegisteredUserCanLogin"})
-	public void RegisteredUserCanLogout() 
+	public void RegisteredUserCanLogout()
 	{
 		registerObject.userLogout();
 	}
@@ -36,7 +36,7 @@ public class UserRegistrationTest extends TestBase
 	{
 		homeObject.openLoginPage();
 		loginObject = new LoginPage(driver); 
-		loginObject.UserLogin("mnaaa974f75@gmail.com", "12345678");
+		loginObject.UserLogin("3mnaaa9274f17015@gmail.com", "3112134567801");
 		Assert.assertTrue(registerObject.logoutLink.getText().contains("Log out"));
 	}
 }

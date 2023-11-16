@@ -21,8 +21,8 @@ public class UserRegistrationWithDDTAndDataProvider extends TestBase
 	public static Object[][] userData()
 	{
 		return new Object[][] {
-			{"Saz51" , "for1t6","test516Saz016@gmail.com","121345656"},
-			{"Ahmed15","Sabe1h6","test516Sabeh301@gmail.com","12341567856"}
+			{"Saz516" , "for1t66","test516Saz0166@gmail.com","121345656"},
+			{"Ahmed1665","Sabe1h666","test516Sabeh30166@gmail.com","12341567856"}
 		};
 	}
 
