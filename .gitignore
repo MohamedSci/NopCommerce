@@ -1,1 +1,17 @@
+#Untrack these folders
 /target/
+/ScreenShot/
+
+
+#Untrack the previously tracked folders
+# add .env file to .gitignore
+echo ".env" >> .gitignore
+git rm --cached .env
+
+# add target file to .gitignore
+echo "target" >> .gitignore
+git rm --cached target
+
+# add ScreenShot file to .gitignore
+echo "ScreenShot" >> .gitignore
+git rm --cached ScreenShot
