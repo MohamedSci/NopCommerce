@@ -3,8 +3,26 @@
   <groupId>nopCommerce</groupId>
   <artifactId>com.mohamedsaidsyed</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>nopCommerce</groupId>
+                <artifactId>com.mohamedsaidsyed</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>C:\Users\moham\OneDrive\Desktop\AAIB_Technical_challenge_updated\AAIB_Technical_challenge\3.NopCommerce\com.mohamedsaidsyed\testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
   <dependencies>
-	  
 	    <!-- Selenium dependency -->
  <dependency>  
 <groupId>org.seleniumhq.selenium</groupId>  
@@ -69,12 +87,7 @@
 		</dependency>
 
 
-	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-<dependency>
-    <groupId>io.github.bonigarcia</groupId>
-    <artifactId>webdrivermanager</artifactId>
-    <version>5.5.3</version>
-</dependency>
+
 
 <!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
 <dependency>
@@ -82,10 +95,6 @@
     <artifactId>ashot</artifactId>
     <version>1.5.4</version>
 </dependency>
-  	<dependency>
-  		<groupId>Amazon</groupId>
-  		<artifactId>com.mohamedsaid</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
+
   </dependencies>
 </project>

@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Regression Suite"  parallel="classes" thread-count="7">
-	<parameter name="browser" value="chrome" />
-	<test name="Regression Test">
+<suite name="Regression Suite"  >
+	<parameter name="browser" value="firefox" />
+	<test name="Regression Test" parallel="classes" thread-count="7">
 		<classes>
 			<class name="tests.UserRegistrationTest" />
 			<class name="tests.UserRegistrationTestWithDDTAndCSV" />

@@ -12,8 +12,7 @@ import pages.LoginPage;
 import pages.UserRegistrationPage;
 
 public class UserRegistrationTestWithJavaFaker extends TestBase
-{
-	HomePage homeObject ; 
+{	HomePage homeObject ; 
 	UserRegistrationPage registerObject ; 
 	LoginPage loginObject ; 
 	Faker fakeData = new Faker(); 
