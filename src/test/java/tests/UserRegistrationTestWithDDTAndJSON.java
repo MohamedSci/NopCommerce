@@ -30,6 +30,7 @@ public class UserRegistrationTestWithDDTAndJSON extends TestBase
 		registerObject = new UserRegistrationPage(driver);
 		registerObject.userRegistration(jsonReader.firstname,jsonReader.lastname,jsonReader.email,jsonReader.password);
 		Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
+		registerObject.clickRegistrationContinueButton();
 	}
 
 	@Test(dependsOnMethods= {"RegisteredUserCanLoginJSON"})

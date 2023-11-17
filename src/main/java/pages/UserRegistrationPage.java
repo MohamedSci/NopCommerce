@@ -30,7 +30,9 @@ public class UserRegistrationPage extends PageBase
 	
 	@FindBy(id="register-button")
 	WebElement registerBtn ; 
-	
+	@FindBy(xpath = "//a[@class=\"button-1 register-continue-button\"]")
+	WebElement registerContinueButton;
+
 	@FindBy(css="div.result")
 	public WebElement successMessage ; 
 	
@@ -55,7 +57,9 @@ public class UserRegistrationPage extends PageBase
 	{
 		clickButton(logoutLink);
 	}
-	
+	public void clickRegistrationContinueButton(){
+		clickButton(registerContinueButton);
+	}
 	public void openMyAccountPage() 
 	{
 		clickButton(myAccountLink);

@@ -30,6 +30,7 @@ public class UserRegistrationTestWithJavaFaker extends TestBase
 		registerObject.userRegistration(firstname,lastname,email,password);
 		System.out.println("The Userr Data is : "+ firstname + " " + lastname + " " + email + " " + password);
 		Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
+		registerObject.clickRegistrationContinueButton();
 	}
 
 	@Test(dependsOnMethods= {"RegisteredUserCanLoginFaker"})

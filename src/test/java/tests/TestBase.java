@@ -3,6 +3,7 @@ package tests;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import io.cucumber.testng.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,11 +22,10 @@ import org.testng.annotations.Parameters;
 import Utilies.Helper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TestBase 
+public class TestBase  extends AbstractTestNGCucumberTests
 {
-	public static WebDriver driver ; 
-	
-	public static String downloadPath = System.getProperty("user.dir") + "\\Downloads";
+	public static WebDriver driver ;
+	public static String downloadPath = System.getProperty("user.dir") + "/Downloads";
 
 	public static FirefoxOptions firefoxOption() {
 		FirefoxOptions option = new FirefoxOptions();
@@ -69,22 +69,20 @@ public class TestBase
 
 		else if (browserName.equalsIgnoreCase("safari")) {
 			driver = new SafariDriver(); 
-		}
+		}		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.navigate().to("http://demo.nopcommerce.com/");
-	} 
-
-	@AfterMethod
-	public void takeScreenOnFailor(ITestResult result) {
-		if(result.getStatus() == ITestResult.FAILURE) {
+	}
+	
+    @AfterMethod
+    public void getResult(ITestResult result) {
+		if (result.getStatus() == ITestResult.FAILURE) {
 			Helper helper = new Helper();
-			// Take A Screen Shot for Failed Element
 			helper.takeElementsScreenshot(driver, result.getName());
-			// Take Screen Shot to the Full page
-			// helper.captureFullPageScreenshot(driver, result.getName());
 		}
 	}
+
 	
 	@AfterSuite
 	public void quiteAll(){

@@ -43,7 +43,7 @@ public class UserRegistrationTestWithDDTAndCSV extends TestBase {
 			registerObject = new UserRegistrationPage(driver);
 			registerObject.userRegistration(firstname, lastName, email, password);
 			Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
-			registerObject.userLogout();
+			registerObject.clickRegistrationContinueButton();
 			homeObject.openLoginPage();
 			loginObject = new LoginPage(driver);
 			loginObject.UserLogin(email, password);

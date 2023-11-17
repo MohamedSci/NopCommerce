@@ -22,7 +22,7 @@ public class UserRegistrationWithDDTAndPropertiesFile extends TestBase
 	String Password = LoadProperties.userData.getProperty("password"); 
 
 	@Test(priority=1,alwaysRun=true)
-	public void UserCanRegisterSuccssfully() 
+	public void UserCanRegisterSuccssfullyProperties()
 	{
 	
 		homeObject = new HomePage(driver); 
@@ -30,16 +30,17 @@ public class UserRegistrationWithDDTAndPropertiesFile extends TestBase
 		registerObject = new UserRegistrationPage(driver); 
 		registerObject.userRegistration(firtname,lastname,email,Password);
 		Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
+		registerObject.clickRegistrationContinueButton();
 	}
 	
-	@Test(dependsOnMethods= {"RegisteredUserCanLogin"})
-	public void RegisteredUserCanLogout() 
+	@Test(dependsOnMethods= {"RegisteredUserCanLoginProperties"})
+	public void RegisteredUserCanLogoutProperties()
 	{
 		registerObject.userLogout();
 	}
 	
-	@Test(dependsOnMethods= {"UserCanRegisterSuccssfully"})
-	public void RegisteredUserCanLogin() 
+	@Test(dependsOnMethods= {"UserCanRegisterSuccssfullyProperties"})
+	public void RegisteredUserCanLoginProperties()
 	{
 		homeObject.openLoginPage();
 		loginObject = new LoginPage(driver); 

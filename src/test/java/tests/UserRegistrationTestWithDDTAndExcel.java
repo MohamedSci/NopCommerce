@@ -40,11 +40,12 @@ public class UserRegistrationTestWithDDTAndExcel extends TestBase
 		registerObject.userRegistration(firstname,lastname,email,password);
 		Assert.assertTrue(registerObject.successMessage.getText().contains("Your registration completed"));
 		// The Log Out Link is not displayed in this DDT issue at this Step
-//		registerObject.userLogout();
+		registerObject.clickRegistrationContinueButton();
 		homeObject.openLoginPage();
 		loginObject = new LoginPage(driver);
 		loginObject.UserLogin(email,password);
 		Assert.assertTrue(registerObject.logoutLink.getText().contains("Log out"));
+
 		registerObject.userLogout();
 	}
 
