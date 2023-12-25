@@ -9,7 +9,10 @@ Techs:
 - Selenium
 - DDT
 - BDD
-- Cucumber 
+- Cucumber
+- Allure
+- Page Facory
+- POM 
 
 It automates a scenario of Registration with many different data set coming from excel sheet, csv file, Json file , properties file and Facker data provider .
 
