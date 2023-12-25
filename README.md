@@ -11,7 +11,7 @@ Techs:
 - BDD
 - Cucumber 
 
-It automates a scenario of Registration with many different data set coming from excel sheet, scf file, Json file , properties file and Facker data provider .
+It automates a scenario of Registration with many different data set coming from excel sheet, csv file, Json file , properties file and Facker data provider .
 
 then the user Login with the data used in the previous registeration.
 then rhe user log out.
